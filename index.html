@@ -3,134 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FloppyCent</title>
+    <title>FloppyCent Official Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Standard -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Backup for older browsers -->
 </head>
 <body>
+    <!-- Header -->
     <header>
         <h1>FloppyCent</h1>
         <nav>
             <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#gallery">Gallery</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#team">Team</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <!-- Hero Section -->
     <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Welcome to the World of FloppyCent</h2>
+                <p>Unleash the challenge. Get ready for 2026!</p>
+                <button>Watch Trailer</button>
+            </div>
+            <video autoplay muted loop id="hero-video">
+                <source src="images/logo.png" type="image/png">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
         <!-- About Section -->
-        <section id="about" class="scroll-section">
-            <h2>About the Game</h2>
-            <p>FloppyCent is a high-speed, reflex-driven 2D platformer that challenges players to navigate through dangerous obstacles, collect items, and race against time. Set in a dynamic world where environments constantly shift, players must rely on their quick reflexes and strategic thinking to conquer levels and unlock new areas.</p>
-            
-            <p>The game features a vibrant pixel art style, with colorful backdrops and pixel-perfect animations that bring each stage to life. Whether it's leaping across moving platforms, dodging enemy fire, or avoiding environmental hazards, every moment in FloppyCent is designed to test the player's speed and precision.</p>
-
-            <h3>Gameplay Features:</h3>
-            <ul>
-                <li><strong>Fast-Paced Action:</strong> With fluid animations and responsive controls, FloppyCent delivers an exciting, adrenaline-pumping experience.</li>
-                <li><strong>Challenging Obstacles:</strong> Each level is packed with unique challenges that push players to improve their skills.</li>
-                <li><strong>Multiple Power-Ups:</strong> Players can collect various power-ups, such as speed boosts and shields, to help them navigate more difficult stages.</li>
-                <li><strong>Boss Battles:</strong> Defeat powerful bosses that test everything you’ve learned in the game.</li>
-                <li><strong>Progressive Difficulty:</strong> As players advance, they’ll encounter increasingly difficult levels with new hazards and enemies.</li>
-            </ul>
-            
-            <p>FloppyCent isn’t just about speed; it’s also about strategy. Players will need to plan their moves carefully to avoid taking unnecessary risks while collecting the maximum rewards. Each level has multiple paths, providing opportunities for creative gameplay and replayability.</p>
-
-            <h3>Game World:</h3>
-            <p>The game world is divided into several distinct regions, each with its own theme, enemies, and challenges. From futuristic cities with neon lights to ancient ruins filled with traps, FloppyCent’s diverse environments offer a wide range of exciting backdrops for your adventure.</p>
-
-            <p>The fluidity of the game’s controls combined with a variety of obstacles and enemies keeps the gameplay fresh and engaging, ensuring that no two runs are the same.</p>
-
-            <button onclick="window.location.href='#contact';">Contact Us for Updates!</button>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="scroll-section">
-            <h2>Features</h2>
-            <ul>
-                <li><strong>Intuitive Controls:</strong> Designed for precision and speed, FloppyCent's controls make every jump, slide, and dodge feel seamless.</li>
-                <li><strong>Customizable Characters:</strong> Unlock outfits, accessories, and effects to make your character uniquely yours.</li>
-                <li><strong>Dynamic Environments:</strong> Each level features shifting landscapes, weather effects, and hidden areas to explore.</li>
-                <li><strong>Leaderboards:</strong> Compete globally and see how you stack up against the best players.</li>
-                <li><strong>Expansive Levels:</strong> Over 100 levels filled with increasing difficulty and replayability.</li>
-                <li><strong>Cross-Platform Play:</strong> Play on PC, Android, iOS, and more with cloud save functionality.</li>
-            </ul>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery" class="scroll-section">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="assets/screenshot1.png" alt="FloppyCent Screenshot 1">
-                <p>Description: A fast-paced level with dangerous obstacles.</p>
-                <img src="assets/screenshot2.png" alt="FloppyCent Screenshot 2">
-                <p>Description: A tranquil yet challenging area showcasing weather effects.</p>
-                <img src="assets/screenshot3.png" alt="FloppyCent Screenshot 3">
-                <p>Description: A hidden bonus stage with vibrant colors.</p>
+        <section id="about">
+            <h2>About FloppyCent</h2>
+            <p>FloppyCent is a thrilling 2D game that blends fast-paced action with strategy. Scheduled for release in 2026, it promises a unique pixel-art style experience designed to captivate players worldwide.</p>
+            <div class="key-features">
+                <div class="feature">
+                    <h3>Innovative Gameplay</h3>
+                    <p>Master timing and strategy in a world where every move counts.</p>
+                </div>
+                <div class="feature">
+                    <h3>Immersive Soundtrack</h3>
+                    <p>A captivating musical journey composed by Daniel Smith.</p>
+                </div>
+                <div class="feature">
+                    <h3>Stunning Pixel Art</h3>
+                    <p>Handcrafted visuals brought to life by Zachary Francis.</p>
+                </div>
             </div>
         </section>
 
         <!-- Roadmap Section -->
-        <section id="roadmap" class="scroll-section">
+        <section id="roadmap">
             <h2>Development Roadmap</h2>
-            <ul>
-                <li><strong>Q1 2024:</strong> Concept finalized and initial prototypes created.</li>
-                <li><strong>Q3 2024:</strong> Start development of core mechanics.</li>
-                <li><strong>Q1 2025:</strong> Alpha release with early community feedback.</li>
-                <li><strong>Q3 2025:</strong> Beta testing with expanded features and levels.</li>
-                <li><strong>Q1 2026:</strong> Final development phase with polishing and bug fixes.</li>
-                <li><strong>Q3 2026:</strong> Official launch on PC, Android, and iOS platforms.</li>
-                <li><strong>Q4 2026:</strong> Post-launch updates, including multiplayer mode and seasonal events.</li>
-                <li><strong>2027:</strong> Planned DLC and potential console releases.</li>
-            </ul>
+            <p>Here’s a look at our journey and future plans:</p>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <h3>2024</h3>
+                    <p>Conceptualization and prototyping.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>2025</h3>
+                    <p>Core development, alpha testing, and gameplay mechanics polishing.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>2026</h3>
+                    <p>Beta testing, community feedback, and official launch.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Team Section -->
-        <section id="team" class="scroll-section">
+        <section id="team">
             <h2>Meet the Team</h2>
-            <p>The FloppyCent team is a dedicated group of indie developers committed to delivering an unforgettable gaming experience. Each member brings a unique skill set to the project:</p>
-            <ul>
-                <li><strong>Daniel Smith:</strong> Game Designer & Music Composer</li>
-                <li><strong>Zachary Francis:</strong> Programmer & Artist</li>
-            </ul>
-            <p>Together, they have crafted a game that pushes the boundaries of creativity and technical excellence.</p>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="assets/daniel-smith.jpg" alt="Daniel Smith">
+                    <h3>Daniel Smith</h3>
+                    <p>Game Designer & Music Composer</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/zachary-francis.jpg" alt="Zachary Francis">
+                    <h3>Zachary Francis</h3>
+                    <p>Programmer & Artist</p>
+                </div>
+            </div>
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="scroll-section">
-            <h2>FAQ</h2>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
             <div class="faq-item">
-                <button class="faq-question">What is FloppyCent?</button>
-                <p class="faq-answer">FloppyCent is a thrilling 2D platformer combining speed, creativity, and engaging challenges.</p>
+                <h3>When will FloppyCent be released?</h3>
+                <p>FloppyCent is scheduled for release in 2026.</p>
             </div>
             <div class="faq-item">
-                <button class="faq-question">When will it be released?</button>
-                <p class="faq-answer">FloppyCent is planned for a Q3 2026 release.</p>
+                <h3>What platforms will it be available on?</h3>
+                <p>FloppyCent will be available on PC and major consoles.</p>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What platforms will it be available on?</button>
-                <p class="faq-answer">It will be available on PC, Android, and iOS, with plans for future console releases.</p>
+                <h3>How can I participate in beta testing?</h3>
+                <p>Sign up for our newsletter to get updates on beta testing opportunities.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="scroll-section">
+        <section id="contact">
             <h2>Contact Us</h2>
             <form>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" placeholder="Your Name">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" placeholder="Your Email">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
+                <textarea id="message" placeholder="Your Message"></textarea>
+                <button>Send Message</button>
             </form>
         </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 FloppyCent. All rights reserved.</p>
+        <p>&copy; 2024 FloppyCent Team. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
