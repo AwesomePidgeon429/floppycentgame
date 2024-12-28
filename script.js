@@ -1,78 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Scroll Section Navigation
-    const sections = document.querySelectorAll("section");
-    let currentIndex = 0;
-
-    const scrollToSection = (index) => {
-        if (index < 0 || index >= sections.length) return;
-        sections[index].scrollIntoView({ behavior: "smooth" });
-        currentIndex = index;
-    };
-
-    // Mouse Wheel Scroll
-    let isScrolling = false;
-    window.addEventListener("wheel", (event) => {
-        if (isScrolling) return;
-
-        if (event.deltaY > 0) {
-            scrollToSection(currentIndex + 1);
-        } else {
-            scrollToSection(currentIndex - 1);
-        }
-
-        isScrolling = true;
-        setTimeout(() => (isScrolling = false), 800);
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
     });
+});
 
-    // Swipe Support for Touch Devices
-    let touchStartY = 0;
-    let touchEndY = 0;
+// Infinite Scroll Effect (Mock Data for Now)
+let isFetching = false;
+const contentContainer = document.querySelector('main');
 
-    window.addEventListener("touchstart", (event) => {
-        touchStartY = event.touches[0].clientY;
-    });
+const fetchMoreContent = () => {
+    if (isFetching) return;
+    isFetching = true;
 
-    window.addEventListener("touchend", (event) => {
-        touchEndY = event.changedTouches[0].clientY;
+    // Simulate fetching new content
+    setTimeout(() => {
+        const newSection = document.createElement('section');
+        newSection.classList.add('extra-content');
+        newSection.innerHTML = `
+            <h2>Bonus Content</h2>
+            <p>Explore even more about FloppyCent. Stay tuned for additional updates and secrets about the game!</p>
+            <div class="mock-content">
+                <div class="feature">
+                    <h3>Exclusive Insights</h3>
+                    <p>Learn about the challenges faced by the team during development.</p>
+                </div>
+                <div class="feature">
+                    <h3>Hidden Levels</h3>
+                    <p>Discover secrets hidden within FloppyCent.</p>
+                </div>
+                <div class="feature">
+                    <h3>Community Highlights</h3>
+                    <p>Showcasing fan art, mods, and player creativity.</p>
+                </div>
+            </div>
+        `;
+        contentContainer.appendChild(newSection);
+        isFetching = false;
+    }, 2000);
+};
 
-        if (touchStartY > touchEndY + 50) {
-            scrollToSection(currentIndex + 1);
-        } else if (touchStartY < touchEndY - 50) {
-            scrollToSection(currentIndex - 1);
-        }
-    });
+// Scroll Event Listener
+window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    // Keyboard Navigation
-    window.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowDown") {
-            scrollToSection(currentIndex + 1);
-        } else if (event.key === "ArrowUp") {
-            scrollToSection(currentIndex - 1);
-        }
-    });
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+        fetchMoreContent();
+    }
+});
 
-    // FAQ Toggle with Animation
-    const faqButtons = document.querySelectorAll(".faq-question");
+// Parallax Effect for Hero Section
+const heroVideo = document.querySelector('#hero-video');
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    heroVideo.style.transform = `translateY(${scrollY * 0.5}px)`;
+});
 
-    faqButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const answer = button.nextElementSibling;
-            const isVisible = answer.style.maxHeight;
-
-            // Reset all answers to closed
-            document.querySelectorAll('.faq-answer').forEach(answer => {
-                answer.style.maxHeight = null;
-                answer.classList.remove('open');
-            });
-
-            // If the answer is not visible, open it with animation
-            if (!isVisible) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                answer.classList.add('open');
-            } else {
-                answer.style.maxHeight = null;
-                answer.classList.remove('open');
-            }
-        });
+// FAQ Accordion Effect
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const sibling = item.nextElementSibling;
+        sibling.style.display = sibling.style.display === 'block' ? 'none' : 'block';
     });
 });
