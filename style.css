@@ -1,4 +1,4 @@
-/* General reset and layout styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,229 +6,280 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    overflow-x: hidden;
 }
 
-/* Header styles */
+/* Header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111; /* Darker black */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.5); /* Red shadow */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #ff0000; /* Bright red */
 }
 
-nav a {
-    color: #fff;
+header nav a {
+    margin-left: 2rem;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #f39c12;
-}
-
-/* Main content container */
-main {
-    padding: 20px;
-}
-
-/* Section styles */
-.scroll-section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.scroll-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.scroll-section p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-.scroll-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    padding: 10px 0;
-}
-
-.scroll-section ul li {
-    margin-bottom: 8px;
-}
-
-button {
-    background-color: #f39c12;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
     font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #e67e22;
+header nav a:hover {
+    color: #ff0000;
 }
 
-/* Gallery styles */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+/* Hero Section */
+#hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.gallery img {
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6; /* Slight dimming for text readability */
 }
 
-.gallery p {
-    font-size: 0.9rem;
-    color: #777;
+.hero-content {
     text-align: center;
 }
 
-/* FAQ Section */
-.faq-item {
-    margin-bottom: 15px;
+.hero-content h2 {
+    font-size: 3rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.5s ease-in-out;
 }
 
-.faq-question {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content button {
+    background: #ff0000;
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-}
-
-.faq-question:hover {
-    background-color: #444;
-}
-
-.faq-answer {
-    padding: 0 15px;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    color: #ddd;
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-    opacity: 0;
-    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
 }
 
-.faq-answer.open {
-    opacity: 1;
+.hero-content button:hover {
+    background: #cc0000; /* Slightly darker red */
 }
 
-.faq-answer p {
-    margin: 10px 0;
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Section Styles */
+section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
 
-/* Form styles */
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff0000;
+    text-shadow: 0 2px 5px rgba(255, 0, 0, 0.7);
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc; /* Light gray for better readability */
+}
+
+/* Features */
+.key-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    flex: 1;
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    color: #fff;
+}
+
+/* Roadmap */
+.roadmap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.roadmap-item {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.roadmap-item:hover {
+    transform: scale(1.05);
+}
+
+.roadmap-item h3 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+.roadmap-item p {
+    color: #fff;
+}
+
+/* Team Section */
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    width: 20%;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid #ff0000;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+    border-color: #cc0000;
+}
+
+.team-member h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #ff0000;
+}
+
+/* FAQ */
+.faq-item {
+    margin: 2rem 0;
+    text-align: left;
+    padding: 1rem;
+    background: #111;
+    border-left: 5px solid #ff0000;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+    background: #222;
+    transform: scale(1.02);
+}
+
+/* Contact Form */
 form {
-    display: grid;
-    grid-gap: 15px;
-    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-label {
-    font-size: 1rem;
-    color: #333;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+form input, form textarea, form button {
     width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
+form input, form textarea {
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
 }
 
-/* Footer styles */
+form input:focus, form textarea:focus {
+    border-color: #ff0000;
+}
+
+form button {
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background: #cc0000;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #333;
+    padding: 2rem;
+    background: #111;
     color: #fff;
-    margin-top: 40px;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        font-size: 1rem;
-        margin: 0 10px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-        margin: 0 5px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    button {
-        font-size: 0.9rem;
-    }
-
-    footer p {
-        font-size: 0.9rem;
-    }
+    border-top: 2px solid #ff0000;
+    margin-top: 2rem;
 }
